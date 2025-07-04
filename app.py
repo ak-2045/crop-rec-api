@@ -12,15 +12,21 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    N = float(request.form.get('N'))
-    P = float(request.form.get('P'))
-    K = float(request.form.get('K'))
+    data = request.get_json()
 
-    temperature = float(request.form.get('temperature'))
-    humidity = float(request.form.get('humidity'))
+    N = float(data['N'])
+    P = float(data['P'])
+    K = float(data['K'])
+    temperature = float(data['temperature'])
+    humidity = float(data['humidity'])
+    ph = float(data['ph'])
+    rainfall = float(data['rainfall'])
 
-    ph = float(request.form.get('ph'))
-    rainfall = float(request.form.get('rainfall'))
+    input_query = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
+    result = rec_model.predict(input_query)[0]
+
+    return jsonify({'prediction': str(result)})
+
 
     input_query = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
     result = rec_model.predict(input_query)[0]
