@@ -51,9 +51,4 @@ API runs at `http://127.0.0.1:5000/`
 
 ---
 
-## Author
-
-Made by **Akmal Hossain**
-Project: Crop Recommendation using Machine Learning
-
-```
+Author : Akmal Hossain
