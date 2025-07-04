@@ -57,8 +57,3 @@ Made by **Akmal Hossain**
 Project: Crop Recommendation using Machine Learning
 
 ```
-
----
-
-Would you like a **README banner**, deploy button, or anything else?
-```
