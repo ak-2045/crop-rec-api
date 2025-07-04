@@ -1,6 +1,6 @@
 # CropTop – Crop Recommendation API
 
-CropTop is a simple Flask-based API that predicts the best or 'top' crop to grow based on soil and weather inputs. It uses a machine learning model trained on real agricultural data.
+CropTop is a simple Flask-based API that predicts the best or _'top'_ crop to grow based on soil and weather inputs. It uses a machine learning model trained on real agricultural data.
 
 ---
 
