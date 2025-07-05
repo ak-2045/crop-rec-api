@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import pickle
 import numpy as np
 rec_model = pickle.load(open('crop_rec_model.pkl', 'rb'))
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 
@@ -26,13 +28,6 @@ def predict():
     result = rec_model.predict(input_query)[0]
 
     return jsonify({'prediction': str(result)})
-
-
-    input_query = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
-    result = rec_model.predict(input_query)[0]
-
-    return jsonify({'predicted_crop': str(result)})
-
 
 if __name__ == '__main__':
     app.run(host ='0.0.0.0', debug=True)
